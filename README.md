@@ -1,73 +1,73 @@
 # Test 1: Watchdog timer
 
-**Context** 
-Deze test verifieert of de watchdog timer in de ESP32 microcontroller correct functioneert door systeemfouten te detecteren en de drone opnieuw op te starten.
+**Context**  
+This test verifies whether the watchdog timer in the ESP32 microcontroller functions correctly by detecting system faults and restarting the drone.
 
-**Voorbereiding**
-De ESP32 Microcontroller en een debug-interface voor foutdetectie werden klaargezet.
+**Preparation**  
+The ESP32 microcontroller and a debug interface for fault detection were set up.
 
-**Uitvoering**:
-De test bestond uit het simuleren van een systeemfout om te controleren of de watchdog timer de drone binnen de vereiste 3 seconden herstartte.
+**Execution**  
+The test involved simulating a system fault to check if the watchdog timer would restart the drone within the required 3 seconds.
 
-**Resultaten**
-De watchdog timer heeft correct gefunctioneerd. De drone werd binnen de verwachte tijd herstart na het detecteren van een systeemfout. Er waren geen communicatiestoringen tijdens de test.
+**Results**  
+The watchdog timer functioned correctly. The drone was restarted within the expected time after detecting a system fault. No communication issues were observed during the test.
 
-**Conclusie**
-De test voor de watchdog timer was succesvol. De functie werkt zoals vereist en herstart de drone binnen de vereiste tijd.
-
----
-
-# Test 2: Sleep modus
-
-**Context** 
-Deze test controleert de functionaliteit van de slaapmodus op de ESP32, die helpt energie te besparen tijdens inactiviteit.
-
-**Voorbereiding**
-De ESP32 Microcontroller en indien nodig meetapparatuur voor het energieverbruik werden klaargezet.
-
-**Uitvoering** 
-De test bestond uit het verifiëren of de drone binnen 30 seconden in slaapmodus ging bij inactiviteit en succesvol wakker werd bij het ontvangen van een inputsignaal.
-
-**Resultaten**: 
-De slaapmodus functioneerde zoals verwacht. De drone ging in slaapmodus bij inactiviteit en werd binnen de vereiste tijd geactiveerd na een trigger.
-
-**Conclusie**: 
-De slaapmodus is effectief en de drone ontwakend correct na het ontvangen van input. De test is geslaagd.
+**Conclusion**  
+The watchdog timer test was successful. The function works as required and restarts the drone within the specified time.
 
 ---
 
-# Test 3: Gebruik van RTOS / Embedded Linux
+# Test 2: Sleep mode
 
-**Context**: 
-Deze test garandeert de mogelijkheid van de ESP32 om meerdere taken gelijktijdig uit te voeren met behulp van een RTOS of Embedded Linux.
+**Context**  
+This test checks the functionality of the sleep mode on the ESP32, which helps save energy during inactivity.
 
-**Voorbereiding**: 
-Een RTOS of Embedded Linux systeem werd klaargezet op de ESP32, en een testomgeving voor multi-tasking werd opgezet.
+**Preparation**  
+The ESP32 microcontroller and, if necessary, energy consumption measuring equipment were set up.
 
-**Uitvoering**: 
-De test bestond uit het uitvoeren van meerdere taken tegelijkertijd op de drone om te controleren op vertragingen of systeemcrashes.
+**Execution**  
+The test involved verifying if the drone entered sleep mode within 30 seconds of inactivity and successfully woke up upon receiving an input signal.
 
-**Resultaten**: 
-De RTOS-functionaliteit werd succesvol getest. De drone was in staat om meerdere taken gelijktijdig uit te voeren zonder vertraging of crashes.
+**Results**  
+The sleep mode worked as expected. The drone entered sleep mode during inactivity and was activated within the required time after a trigger.
 
-**Conclusie**: 
-De RTOS-functionaliteit is goed werkend en ondersteunt gelijktijdige taakverwerking op de ESP32.
+**Conclusion**  
+The sleep mode is effective, and the drone wakes up correctly after receiving input. The test was successful.
 
 ---
 
-# Test 4: Uitlezen van de MPU6050 sensor met I2C
+# Test 3: Use of RTOS / Embedded Linux
 
-**Context**: 
-Deze test verifieert of de ESP32-CAM data kan uitlezen van de MPU6050 sensor via I2C communicatie.
+**Context**  
+This test ensures that the ESP32 is capable of running multiple tasks simultaneously using an RTOS or Embedded Linux.
 
-**Voorbereiding**: 
-Componenten zoals de ESP32-CAM, MPU6050 sensor, I2C-verbinding en seriële monitor werden klaargezet.
+**Preparation**  
+An RTOS or Embedded Linux system was set up on the ESP32, and a multitasking test environment was prepared.
 
-**Uitvoering**: 
-De test bestond uit het uitlezen van accelerometer- en gyroscoopdata van de MPU6050 sensor en het weergeven van deze data op de seriële monitor.
+**Execution**  
+The test involved running multiple tasks simultaneously on the drone to check for delays or system crashes.
 
-**Resultaten**: 
-De uitlezing van de MPU6050 via de ESP32-CAM was succesvol. Accelerometer en gyroscoopwaarden werden continu en zonder storingen weergegeven op de seriële monitor.
+**Results**  
+The RTOS functionality was successfully tested. The drone was able to perform multiple tasks simultaneously without delays or crashes.
 
-**Conclusie**: 
-De uitlezing van de MPU6050 werkt zoals verwacht. De data is betrouwbaar en de communicatie is stabiel. De test is geslaagd!
+**Conclusion**  
+The RTOS functionality is working well and supports concurrent task processing on the ESP32.
+
+---
+
+# Test 4: Reading data from the MPU6050 sensor with I2C
+
+**Context**  
+This test verifies whether the ESP32-CAM can read data from the MPU6050 sensor via I2C communication.
+
+**Preparation**  
+Components such as the ESP32-CAM, MPU6050 sensor, I2C connection, and serial monitor were set up.
+
+**Execution**  
+The test involved reading accelerometer and gyroscope data from the MPU6050 sensor and displaying this data on the serial monitor.
+
+**Results**  
+The reading of the MPU6050 via the ESP32-CAM was successful. Accelerometer and gyroscope values were continuously and reliably displayed on the serial monitor without any errors.
+
+**Conclusion**  
+The reading of the MPU6050 works as expected. The data is reliable, and the communication is stable. The test was successful!
