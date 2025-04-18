@@ -1,73 +1,107 @@
-# Test 1: Watchdog timer
+# Test report - ESP32 drone functionalities
 
-**Context**  
+## Test 1: Watchdog timer
+
+**Context**
 This test verifies whether the watchdog timer in the ESP32 microcontroller functions correctly by detecting system faults and restarting the drone.
 
-**Preparation**  
-The ESP32 microcontroller and a debug interface for fault detection were set up.
+**Requirement**  
+  The ESP32 must use a watchdog timer that automatically restarts the system in case of errors.
 
-**Execution**  
-The test involved simulating a system fault to check if the watchdog timer would restart the drone within the required 3 seconds.
+**Acceptance criteria**  
+  The watchdog must restart the drone within 3 seconds after detecting a system error or freeze.
 
-**Results**  
-The watchdog timer functioned correctly. The drone was restarted within the expected time after detecting a system fault. No communication issues were observed during the test.
+**Materials needed**  
+  1. ESP32 Microcontroller  
+  2. Debug interface for fault injection and monitoring
 
-**Conclusion**  
-The watchdog timer test was successful. The function works as required and restarts the drone within the specified time.
+- **Description**  
+  This test verifies whether the ESP32's watchdog timer functions correctly by detecting a system error and automatically restarting the drone.
+
+- **Results**  
+  The watchdog timer functioned correctly. The drone restarted within the expected time after detecting a system error. No communication issues were observed during the test.
+
+- **Conclusion**  
+  The watchdog timer test was successful. The function works as required and restarts the drone within the specified time.
 
 ---
 
-# Test 2: Sleep mode
+## Test 2: Sleep mode
 
-**Context**  
+**Context**
 This test checks the functionality of the sleep mode on the ESP32, which helps save energy during inactivity.
 
-**Preparation**  
-The ESP32 microcontroller and, if necessary, energy consumption measuring equipment were set up.
+**Requirement**  
+  The ESP32 must automatically enter sleep mode during inactivity to conserve energy.
 
-**Execution**  
-The test involved verifying if the drone entered sleep mode within 30 seconds of inactivity and successfully woke up upon receiving an input signal.
+**Acceptance criteria**  
+  The drone must enter sleep mode within 30 seconds of inactivity and correctly wake up upon receiving an input signal.
+
+**Materials needed**  
+  1. ESP32 Microcontroller  
+  2. Power consumption monitoring (optional)  
+
+**Description**  
+  This test checks if the sleep mode functions properly and whether the drone correctly wakes up after a trigger.
 
 **Results**  
-The sleep mode worked as expected. The drone entered sleep mode during inactivity and was activated within the required time after a trigger.
+  The sleep mode functioned as expected. The drone entered sleep mode during inactivity and was reactivated within the required time after a trigger.
 
 **Conclusion**  
-The sleep mode is effective, and the drone wakes up correctly after receiving input. The test was successful.
+  Sleep mode is effective, and the drone wakes correctly upon receiving input. The test passed successfully.
 
 ---
 
-# Test 3: Use of RTOS / Embedded Linux
+## Test 3: Use of RTOS / Embedded Linux
 
-**Context**  
+**Context**
 This test ensures that the ESP32 is capable of running multiple tasks simultaneously using an RTOS or Embedded Linux.
 
-**Preparation**  
-An RTOS or Embedded Linux system was set up on the ESP32, and a multitasking test environment was prepared.
+**Requirement**  
+  The drone must run on an RTOS or Embedded Linux system to handle concurrent task execution.
 
-**Execution**  
-The test involved running multiple tasks simultaneously on the drone to check for delays or system crashes.
+**Acceptance criteria**  
+  The system must be capable of running multiple tasks simultaneously without delays or system crashes.
+
+- **Materials needed**  
+  1. ESP32 Microcontroller  
+  2. RTOS or Embedded Linux distribution  
+  3. Multitasking test environment
+
+**Description**  
+  This test verifies whether RTOS usage works correctly on the ESP32 and whether multiple processes can run stably.
 
 **Results**  
-The RTOS functionality was successfully tested. The drone was able to perform multiple tasks simultaneously without delays or crashes.
+  RTOS functionality was successfully tested. The drone was able to execute multiple tasks simultaneously without delays or crashes.
 
 **Conclusion**  
-The RTOS functionality is working well and supports concurrent task processing on the ESP32.
+  RTOS functionality is working well and supports concurrent task processing on the ESP32.
 
 ---
 
-# Test 4: Reading data from the MPU6050 sensor with I2C
+## Test 4: Reading the MPU6050 sensor via I2C
 
-**Context**  
+**Context**
 This test verifies whether the ESP32-CAM can read data from the MPU6050 sensor via I2C communication.
 
-**Preparation**  
-Components such as the ESP32-CAM, MPU6050 sensor, I2C connection, and serial monitor were set up.
+**Requirement**  
+  The ESP32-CAM must be able to read data from a connected MPU6050 sensor via I2C.
 
-**Execution**  
-The test involved reading accelerometer and gyroscope data from the MPU6050 sensor and displaying this data on the serial monitor.
+**Acceptance criteria**  
+  - The sensor must return correct values (acceleration and gyroscopic data).  
+  - Data readings must be repeatable and stable without errors.
+
+**Materials needed**  
+  1. ESP32-CAM  
+  2. MPU6050 sensor  
+  3. I2C connection  
+  4. Serial monitor (ESP-IDF)  
+
+**Description**  
+  This test verifies the reading of sensor values from the MPU6050 via I2C. The ESP32-CAM receives acceleration and rotation data from the sensor and displays it via the serial monitor.
 
 **Results**  
-The reading of the MPU6050 via the ESP32-CAM was successful. Accelerometer and gyroscope values were continuously and reliably displayed on the serial monitor without any errors.
+  The reading of the MPU6050 via the ESP32-CAM was successful. Accelerometer and gyroscope values were continuously displayed on the serial monitor without any issues.
 
 **Conclusion**  
-The reading of the MPU6050 works as expected. The data is reliable, and the communication is stable. The test was successful!
+  The MPU6050 readout works as expected. The data is reliable, and communication is stable. The test passed successfully.
