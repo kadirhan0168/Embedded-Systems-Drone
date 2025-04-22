@@ -1,0 +1,51 @@
+### ESP-IDF Build Files ###
+/build/
+/sdkconfig
+/sdkconfig.old
+/compile_commands.json
+
+### Firmware Output Files ###
+.devcontainer
+build
+components
+managed_components
+sdkconfig.ci
+*.bin
+*.elf
+*.map
+*.a
+*.o
+*.d
+*.su
+*.lst
+*.log
+
+### IDE/Editor ###
+# VS Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# CLion / JetBrains
+.idea/
+*.iml
+
+# Swap files / Backup
+*.swp
+*.swo
+*~
+
+### System Files ###
+.DS_Store
+Thumbs.db
+
+### Python Cache ###
+__pycache__/
+*.py[cod]
+
+# virtualenvs (optional)
+venv/
+.env/
