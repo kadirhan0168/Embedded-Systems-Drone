@@ -47,8 +47,6 @@ The system has the following features:
 
 ## Get Started
 
-The scripts in this repository are written to be used seamlessly with a Raspberry Pi running Debian. Using a device running an operating system other than a Linux distro, may require additional setup.
-
 1. Clone this repository:
    ```bash
    git clone https://github.com/kadirhan0168/Embedded-Systems-Drone.git
@@ -66,7 +64,7 @@ The scripts in this repository are written to be used seamlessly with a Raspberr
 ### Drone:
 
 1. Build the drone.
-2. Wire all components according to `docs/designs/embedded-systems-drone.kicad_sch`.
+2. Wire all components according to `docs/schematics/embedded-systems-drone.pdf`.
 3. Adjust WiFi credentials in `main/main.cpp`.
 4. Connect ESP32-CAM-MB micro USB programmer to the onboard ESP32CAM module through jumper wires. Make sure to also connect IO0 to GND when flashing.
 5. Set correct serial port.
@@ -75,7 +73,7 @@ The scripts in this repository are written to be used seamlessly with a Raspberr
 
 ### Telemetry & Emergency Stop Controller:
 
-1. Build the Telemetry & Emergency Stop Controller according to `docs/designs/embedded-systems-telemtry-controller.kicad_sch`.
+1. Build the Telemetry & Emergency Stop Controller according to `docs/schematics/embedded-systems-telemetry-controller.pdf`.
 2. Power the ESP32 through USB.
 
 ## Usage
