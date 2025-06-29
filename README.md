@@ -4,6 +4,9 @@
 
 This project implements a WiFi-controlled drone using ESP32 microcontroller with MPU6050 accelerometer/gyroscope for stabilization. The drone can be controlled via a web interface that displays real-time orientation data and allows adjustment of PID parameters.
 
+**Want to understand how it works internally?**  
+See the [Project Overview Document](docs/overview.md) for full system architecture, hardware schematics, software design, flowcharts, API docs, and more.
+
 ### Features
 
 The system has the following features:
